@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "rezeptedatenbank": {
+      "hosting": {
+        "app": [
+          "rezeptedatenbank"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "rezeptedatenbank"
+  }
+}
