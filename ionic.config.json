@@ -1,0 +1,8 @@
+{
+  "name": "RezepteApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "0a15995f"
+}
