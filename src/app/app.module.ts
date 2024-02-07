@@ -10,11 +10,15 @@ import { getApp, initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, indexedDBLocalPersistence, initializeAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { Capacitor } from '@capacitor/core';
+import { RecipeComponent } from './recipe/recipe.component';
 
 //import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    RecipeComponent
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(), 

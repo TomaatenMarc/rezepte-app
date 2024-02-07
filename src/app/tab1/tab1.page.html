@@ -17,7 +17,7 @@
     <ion-item *ngFor="let recipe of recipes" (click)="openRecipe(recipe)">
       <ion-label>
         <h2>{{recipe.name}}</h2>
-        <p>PersonenAnzahl: {{recipe.numberOfPersons}}</p>
+        <p>Personenzahl: {{recipe.numberOfPersons}}</p>
         <p>Zutaten: {{formatIngredients(recipe.ingredients)}}</p>
       </ion-label>
     </ion-item>
@@ -36,9 +36,6 @@
           <ion-title>Neues Rezept</ion-title>
           <ion-buttons slot="end">
             <ion-fab-button (click)="cancel()" color="danger"> <ion-icon name="close-outline"></ion-icon> </ion-fab-button>
-          </ion-buttons>
-          <ion-buttons slot="end">
-            <ion-fab-button (click)="getRecipes()" color="primary"> <ion-icon name="close-outline"></ion-icon> </ion-fab-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>

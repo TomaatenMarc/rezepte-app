@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -17,7 +18,10 @@ export class Tab1Page implements OnInit{
   ingredients: string = '';
   steps: string = '';
 
-  constructor(private firebaseService: FirebaseService) {}
+  constructor(
+    private firebaseService: FirebaseService,
+    private navCtrl: NavController
+    ) {}
   ngOnInit(){
     this.getRecipes();
   }
@@ -41,7 +45,7 @@ export class Tab1Page implements OnInit{
   }
 
   openRecipe(recipe: any){
-    console.log(recipe);
+    this.navCtrl.navigateForward(['/recipe'], {state: {recipe: recipe}});
   }
 
   addRecipe(){
