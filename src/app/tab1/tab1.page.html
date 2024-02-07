@@ -13,22 +13,51 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-list>
+    <ion-item *ngFor="let recipe of recipes" (click)="openRecipe(recipe)">
+      <ion-label>
+        <h2>{{recipe.name}}</h2>
+        <p>PersonenAnzahl: {{recipe.numberOfPersons}}</p>
+        <p>Zutaten: {{formatIngredients(recipe.ingredients)}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>  
+
   <ion-fab slot="fixed" horizontal="end" vertical="bottom">
-    <ion-fab-button (click)="newCategory()">
+    <ion-fab-button (click)="newRecipe()">
       <ion-icon name="add-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
   
-  <ion-modal #new_category [isOpen]="open_new_category" (willDismiss)="onWillDismiss($event)">
+  <ion-modal #new_recipe [isOpen]="open_new_recipe" (willDismiss)="onWillDismiss($event)">
     <ng-template>
       <ion-header>
         <ion-toolbar color="light">
-          <ion-title>Neue Kategorie</ion-title>
+          <ion-title>Neues Rezept</ion-title>
           <ion-buttons slot="end">
             <ion-fab-button (click)="cancel()" color="danger"> <ion-icon name="close-outline"></ion-icon> </ion-fab-button>
           </ion-buttons>
+          <ion-buttons slot="end">
+            <ion-fab-button (click)="getRecipes()" color="primary"> <ion-icon name="close-outline"></ion-icon> </ion-fab-button>
+          </ion-buttons>
         </ion-toolbar>
       </ion-header>
+
+      <ion-list>
+        <ion-item>
+          <ion-input [(ngModel)]="recipeName" label="Rezeptname"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="numberOfPersons" label="Personenanzahl" placeholder="Für wie viele Personen sind die Angaben?"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-textarea [(ngModel)]="ingredients" label="Zutaten" placeholder="Liste aller Zutaten. Nach jeder Zutat ein Mal Enter"></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-textarea [(ngModel)]="steps" label="Schritte" placeholder="Liste aller Schritte. Nach jedem Schritt ein Mal Enter"></ion-textarea>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="full" (click)="addRecipe()">Rezept hinzufügen</ion-button>
       <ion-content>
 
       </ion-content>
