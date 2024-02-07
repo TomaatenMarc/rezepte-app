@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SettingsService } from '../services/settings.service';
 
 @Component({
   selector: 'app-tab3',
@@ -6,7 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  darkModeEnabled = this.settings.darkModeEnabled;
+  constructor(private settings: SettingsService) {}
 
-  constructor() {}
-
+  toggleDarkMode(event: any) {
+    this.settings.toggleDarkMode(event);
+  }
 }

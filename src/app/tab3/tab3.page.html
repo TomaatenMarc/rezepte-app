@@ -12,4 +12,11 @@
       <ion-title size="large">Einstellungen</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Dark Mode</ion-label>
+      <ion-toggle slot="end" [checked]="darkModeEnabled" (ionChange)="toggleDarkMode($event)"></ion-toggle>
+    </ion-item>
+  </ion-list>
 </ion-content>
