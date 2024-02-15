@@ -11,13 +11,15 @@ import { getAuth, indexedDBLocalPersistence, initializeAuth, provideAuth } from 
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { Capacitor } from '@capacitor/core';
 import { RecipeComponent } from './recipe/recipe.component';
+import { StepComponent } from './recipe/step/step.component';
 
 //import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RecipeComponent
+    RecipeComponent,
+    StepComponent
   ],
   imports: [
     BrowserModule,

@@ -3,24 +3,30 @@ import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-recipe',
-  templateUrl: './recipe.component.html',
-  styleUrls: ['./recipe.component.scss'],
+  selector: 'app-step',
+  templateUrl: './step.component.html',
+  styleUrls: ['./step.component.scss'],
 })
-export class RecipeComponent  implements OnInit {
+export class StepComponent  implements OnInit {
   recipe: any;
+  step: any;
 
   constructor(private route: ActivatedRoute, private navCtrl: NavController) { }
 
   ngOnInit() {
     this.recipe = history.state.recipe;
+    this.step = history.state.step;
+  }
+
+  showNextStep(){
+    this.step++;
+  }
+
+  showPreviousStep(){
+    this.step--;
   }
   
   return(){
     this.navCtrl.back();
-  }
-
-  showFirstStep(){
-    this.navCtrl.navigateForward('recipe/step', {state: {recipe: this.recipe, step: 0}});
   }
 }

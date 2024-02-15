@@ -1,15 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Zufälliges Rezept
+      Feeling Lucky?
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Zufälliges Rezept</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-grid class="ion-padding">
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <ion-button class="biggerButton" (click)="randomRecipe()">
+          Zufälliges Rezept
+          <ion-icon slot="end" name="color-wand-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
