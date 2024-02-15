@@ -33,24 +33,22 @@
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
-
-      <ion-list>
-        <ion-item>
-          <ion-input [(ngModel)]="recipeName" label="Rezeptname" placeholder="Name des Rezepts"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input [(ngModel)]="numberOfPersons" label="Personenanzahl" placeholder="Für wie viele Personen sind die Angaben?"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-textarea [(ngModel)]="ingredients" label="Zutaten" placeholder="Liste aller Zutaten. Nach jeder Zutat einmal Enter"></ion-textarea>
-        </ion-item>
-        <ion-item>
-          <ion-textarea [(ngModel)]="steps" label="Schritte" placeholder="Liste aller Schritte. Nach jedem Schritt einmal Enter"></ion-textarea>
-        </ion-item>
-      </ion-list>
-      <ion-button expand="full" (click)="addRecipe()">Rezept hinzufügen</ion-button>
       <ion-content>
-
+        <ion-list>
+          <ion-item>
+            <ion-input [(ngModel)]="recipeName" label="Rezeptname" placeholder="Name des Rezepts"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input [(ngModel)]="numberOfPersons" label="Personenanzahl" placeholder="Für wie viele Personen sind die Angaben?"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="ingredients" label="Zutaten" placeholder="Liste aller Zutaten. Nach jeder Zutat einmal Enter"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-textarea [(ngModel)]="steps" label="Schritte" placeholder="Liste aller Schritte. Nach jedem Schritt einmal Enter"></ion-textarea>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="full" (click)="addRecipe()">Rezept hinzufügen</ion-button>
       </ion-content>
     </ng-template>
   </ion-modal>
