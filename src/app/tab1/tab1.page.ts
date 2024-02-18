@@ -9,7 +9,7 @@ import { NavController } from '@ionic/angular';
 })
 export class Tab1Page implements OnInit{
 
-  open_new_recipe = false;
+  openNewRecipe = false;
 
   recipes: any[] = [];
 
@@ -27,15 +27,15 @@ export class Tab1Page implements OnInit{
   }
 
   newRecipe(){
-    this.open_new_recipe = true;
+    this.openNewRecipe = true;
   }
 
   onWillDismiss(event:any){
-    console.log(event);
+    this.openNewRecipe = false;
   }
 
   cancel(){
-    this.open_new_recipe = false;
+    this.openNewRecipe = false;
   }
 
   getRecipes(){
@@ -53,7 +53,8 @@ export class Tab1Page implements OnInit{
       name: this.recipeName,
       numberOfPersons: this.numberOfPersons,
       ingredients: this.ingredients.split('\n'),
-      steps: this.steps.split('\n')
+      steps: this.steps.split('\n'),
+      id: this.recipeName + new Date().getTime().toString()
     };
 
     this.firebaseService.addRecipe(recipeData)
@@ -63,7 +64,7 @@ export class Tab1Page implements OnInit{
     .catch((error) => {
       console.error('Fehler beim Hinzufügen des Rezeptes: ', error);
     });
-    this.open_new_recipe = false;
+    this.openNewRecipe = false;
     this.recipeName = '';
     this.numberOfPersons = 1;
     this.ingredients = '';

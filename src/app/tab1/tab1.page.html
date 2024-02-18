@@ -23,7 +23,7 @@
     </ion-fab-button>
   </ion-fab>
   
-  <ion-modal #new_recipe [isOpen]="open_new_recipe" (willDismiss)="onWillDismiss($event)">
+  <ion-modal [isOpen]="openNewRecipe" (willDismiss)="onWillDismiss($event)">
     <ng-template>
       <ion-header>
         <ion-toolbar color="light">
