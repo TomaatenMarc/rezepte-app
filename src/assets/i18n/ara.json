@@ -1,0 +1,23 @@
+{
+    "step": "خطوة",
+    "numberOfPeople": "عدد الأشخاص",
+    "ingredients": "المكونات",
+    "steps": "الخطوات",
+    "reallyDeleteRecipe": "هل تريد حقًا حذف الوصفة؟",
+    "yes": "نعم",
+    "no": "لا",
+    "editRecipe": "تعديل الوصفة",
+    "recipeName": "اسم الوصفة",
+    "newRecipe": "وصفة جديدة",
+    "cookbook": "كتاب الطبخ",
+    "nameOfRecipe": "اسم الوصفة",
+    "howManyPeople": "لكم عدد الأشخاص هذه الوصفة؟",
+    "listOfIngredients": "قائمة المكونات. مكون واحد في كل سطر.",
+    "listOfSteps": "قائمة الخطوات. خطوة واحدة في كل سطر.",
+    "addRecipe": "إضافة وصفة",
+    "randomRecipe": "وصفة عشوائية",
+    "settings": "الإعدادات",
+    "language": "اللغة",
+    "darkMode": "الوضع الداكن",
+    "shareRecipe": "مشاركة الوصفة"
+}

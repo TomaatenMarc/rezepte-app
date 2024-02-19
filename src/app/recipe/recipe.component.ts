@@ -37,6 +37,21 @@ export class RecipeComponent  implements OnInit {
     this.deleteModal = false;
   }
 
+  async shareRecipe(){
+    const ingredients = this.recipe.ingredients.join('\n');
+    const steps = this.recipe.steps.join('\n');
+    const shareData = {
+      title: this.recipe.name,
+      text: `Zutaten:\n${ingredients}\n\nSchritte:\n${steps}`,
+    };
+    try {
+      await (navigator as any).share(shareData);
+      console.log('Shared successfully');
+    } catch (error) {
+      console.error('Error sharing:', error);
+    }
+  }
+
   copyIngredients(){
     const ingredients = this.recipe.ingredients.join('\n');
     navigator.clipboard.writeText(ingredients);

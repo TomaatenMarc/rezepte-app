@@ -18,5 +18,6 @@
     "randomRecipe": "Receta aleatoria",
     "settings": "Configuración",
     "language": "Idioma",
-    "darkMode": "Modo oscuro"
+    "darkMode": "Modo oscuro",
+    "shareRecipe": "Compartir receta"
 }

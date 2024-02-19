@@ -18,5 +18,6 @@
     "randomRecipe": "Zufälliges Rezept",
     "settings": "Einstellungen",
     "language": "Sprache",
-    "darkMode": "Dunkler Modus"
+    "darkMode": "Dunkler Modus",
+    "shareRecipe": "Rezept teilen"
 }
