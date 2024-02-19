@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Schritt {{step+1}}. {{ recipe.name }}</ion-title>
+    <ion-title>{{"step" | translate}} {{step+1}}. {{ recipe.name }}</ion-title>
     <ion-buttons slot="end">
       <ion-fab-button (click)="return()" color="danger"> <ion-icon name="close-outline"></ion-icon> </ion-fab-button>
     </ion-buttons>

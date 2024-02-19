@@ -13,6 +13,14 @@ import { Capacitor } from '@capacitor/core';
 import { RecipeComponent } from './recipe/recipe.component';
 import { StepComponent } from './recipe/step/step.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+
+//https://www.youtube.com/watch?v=NVFVbah2aWU
+export function HttpLoaderFactory(http:HttpClient){
+  return new TranslateHttpLoader(http);
+}
 
 //import { AngularFirestoreModule } from '@angular/fire/firestore';
 
@@ -27,6 +35,15 @@ import { FormsModule } from '@angular/forms';
     IonicModule.forRoot(), 
     AppRoutingModule,
     FormsModule,
+    //https://www.youtube.com/watch?v=NVFVbah2aWU
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader:{
+        provide:TranslateLoader,
+        useFactory:HttpLoaderFactory,
+        deps:[HttpClient]
+      }
+    }),
     provideFirebaseApp(() => initializeApp({"projectId":"rezeptedatenbank","appId":"1:346579543687:web:c926a09156549c8c0d7a22","storageBucket":"rezeptedatenbank.appspot.com","apiKey":"AIzaSyCoTxb7WMf178og2bdakEKsaEkUcm3lk9M","authDomain":"rezeptedatenbank.firebaseapp.com","messagingSenderId":"346579543687","measurementId":"G-VBDNYFNB05"})),
     //provideAuth(() => getAuth()),
     provideAuth(() => {

@@ -1,0 +1,11 @@
+{
+    "step": "Step",
+    "numberOfPeople": "Number of people",
+    "ingredients": "Ingredients",
+    "steps": "Steps",
+    "reallyDeleteRecipe": "Really delete Recipe?",
+    "yes": "Yes",
+    "no": "No",
+    "editRecipe": "Edit recipe",
+    "recipeName": "Recipe name"
+}

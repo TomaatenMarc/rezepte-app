@@ -1,0 +1,11 @@
+{
+    "step": "Schritt",
+    "numberOfPeople": "Anzahl der Personen",
+    "ingredients": "Zutaten",
+    "steps": "Schritte",
+    "reallyDeleteRecipe": "Rezept wirklich löschen?",
+    "yes": "Ja",
+    "no": "Nein",
+    "editRecipe": "Rezept bearbeiten",
+    "recipeName": "Rezeptname"
+}
