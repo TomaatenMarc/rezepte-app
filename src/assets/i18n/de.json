@@ -7,5 +7,16 @@
     "yes": "Ja",
     "no": "Nein",
     "editRecipe": "Rezept bearbeiten",
-    "recipeName": "Rezeptname"
+    "recipeName": "Rezeptname",
+    "newRecipe": "Neues Rezept",
+    "cookbook": "Kochbuch",
+    "nameOfRecipe": "Name des Rezepts",
+    "howManyPeople": "Für wie viele Personen ist dieses Rezept?",
+    "listOfIngredients": "Liste der Zutaten. Eine Zutat pro Zeile.",
+    "listOfSteps": "Liste der Schritte. Ein Schritt pro Zeile.",
+    "addRecipe": "Rezept hinzufügen",
+    "randomRecipe": "Zufälliges Rezept",
+    "settings": "Einstellungen",
+    "language": "Sprache",
+    "darkMode": "Dunkler Modus"
 }

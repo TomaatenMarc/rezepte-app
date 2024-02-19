@@ -16,6 +16,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { Tab1Page } from './tab1/tab1.page';
+import { Tab2Page } from './tab2/tab2.page';
+import { Tab3Page } from './tab3/tab3.page';
+import { TabsPage } from './tabs/tabs.page';
 
 //https://www.youtube.com/watch?v=NVFVbah2aWU
 export function HttpLoaderFactory(http:HttpClient){
@@ -28,7 +32,11 @@ export function HttpLoaderFactory(http:HttpClient){
   declarations: [
     AppComponent,
     RecipeComponent,
-    StepComponent
+    StepComponent,
+    Tab1Page,
+    Tab2Page,
+    Tab3Page,
+    TabsPage
   ],
   imports: [
     BrowserModule,

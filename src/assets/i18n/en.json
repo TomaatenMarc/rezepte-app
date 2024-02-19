@@ -7,5 +7,16 @@
     "yes": "Yes",
     "no": "No",
     "editRecipe": "Edit recipe",
-    "recipeName": "Recipe name"
+    "recipeName": "Recipe name",
+    "newRecipe": "New recipe",
+    "cookbook": "Cookbook",
+    "nameOfRecipe": "Name of recipe",
+    "howManyPeople": "For how many people is this recipe?",
+    "listOfIngredients": "List of ingredients. One ingredient per line.",
+    "listOfSteps": "List of steps. One step per line.",
+    "addRecipe": "Add recipe",
+    "randomRecipe": "Random recipe",
+    "settings": "Settings",
+    "language": "Language",
+    "darkMode": "Dark mode"
 }

@@ -1,0 +1,22 @@
+{
+    "step": "Stap",
+    "numberOfPeople": "Aantal personen",
+    "ingredients": "Ingrediënten",
+    "steps": "Stappen",
+    "reallyDeleteRecipe": "Recept echt verwijderen?",
+    "yes": "Ja",
+    "no": "Nee",
+    "editRecipe": "Recept bewerken",
+    "recipeName": "Naam van het recept",
+    "newRecipe": "Nieuw recept",
+    "cookbook": "Kookboek",
+    "nameOfRecipe": "Naam van het recept",
+    "howManyPeople": "Voor hoeveel personen is dit recept?",
+    "listOfIngredients": "Lijst van ingrediënten. Een ingrediënt per regel.",
+    "listOfSteps": "Lijst van stappen. Een stap per regel.",
+    "addRecipe": "Recept toevoegen",
+    "randomRecipe": "Willekeurig recept",
+    "settings": "Instellingen",
+    "language": "Taal",
+    "darkMode": "Donkere modus"
+}

@@ -1,0 +1,22 @@
+{
+    "step": "Paso",
+    "numberOfPeople": "Número de personas",
+    "ingredients": "Ingredientes",
+    "steps": "Pasos",
+    "reallyDeleteRecipe": "¿Realmente eliminar la receta?",
+    "yes": "Sí",
+    "no": "No",
+    "editRecipe": "Editar receta",
+    "recipeName": "Nombre de la receta",
+    "newRecipe": "Nueva receta",
+    "cookbook": "Libro de cocina",
+    "nameOfRecipe": "Nombre de la receta",
+    "howManyPeople": "¿Para cuántas personas es esta receta?",
+    "listOfIngredients": "Lista de ingredientes. Un ingrediente por línea.",
+    "listOfSteps": "Lista de pasos. Un paso por línea.",
+    "addRecipe": "Agregar receta",
+    "randomRecipe": "Receta aleatoria",
+    "settings": "Configuración",
+    "language": "Idioma",
+    "darkMode": "Modo oscuro"
+}

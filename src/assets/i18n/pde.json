@@ -1,0 +1,22 @@
+{
+    "step": "Stapp",
+    "numberOfPeople": "Anzahl vun Lüüd",
+    "ingredients": "Ingredenzien",
+    "steps": "Stappen",
+    "reallyDeleteRecipe": "Warklich dat Rezept löschen?",
+    "yes": "Jo",
+    "no": "Nee",
+    "editRecipe": "Rezept bearbeiten",
+    "recipeName": "Naam vun dat Rezept",
+    "newRecipe": "Nieg Rezept",
+    "cookbook": "Kookbook",
+    "nameOfRecipe": "Naam vun dat Rezept",
+    "howManyPeople": "För wölv Lüüd is dit Rezept?",
+    "listOfIngredients": "List vun Ingredenzien. Een Ingredienz per Linie.",
+    "listOfSteps": "List vun Stappen. Een Stapp per Linie.",
+    "addRecipe": "Rezept tofögen",
+    "randomRecipe": "Willekeurig Rezept",
+    "settings": "Instellungen",
+    "language": "Spraak",
+    "darkMode": "Duustern Modus"
+}

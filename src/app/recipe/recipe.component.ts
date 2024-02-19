@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { FirebaseService } from '../services/firebase.service';
+//import { Clipboard } from '@ionic-native/clipboard/ngx';
 
 @Component({
   selector: 'app-recipe',
@@ -21,7 +22,8 @@ export class RecipeComponent  implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private navCtrl: NavController,
-    private firebaseService: FirebaseService
+    private firebaseService: FirebaseService,
+    //private clipboard: Clipboard
     ) { }
 
   ngOnInit() {
@@ -37,13 +39,17 @@ export class RecipeComponent  implements OnInit {
     this.deleteModal = false;
   }
 
+  copyIngredientsToClipboard(){
+    //this.clipboard.copy(this.recipe.ingredients.join('\n'));
+  }
+
   openModal(){
     this.editModal = true;
   }
 
   editRecipe(){
     console.log('Recipe ID:', this.recipe.id);
-    console.log('Recipe ID:', this.recipe.name);
+    console.log('Recipe Name:', this.recipe.name);
     const editedRecipe = {
       name: this.recipeName,
       numberOfPersons: this.numberOfPersons,

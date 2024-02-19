@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Kochbuch
+      {{"cookbook" | translate}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,8 +11,8 @@
     <ion-item *ngFor="let recipe of recipes" (click)="openRecipe(recipe)">
       <ion-label>
         <h2>{{recipe.name}}</h2>
-        <p>Personenzahl: {{recipe.numberOfPersons}}</p>
-        <p>Zutaten: {{formatIngredients(recipe.ingredients)}}</p>
+        <p>{{"numberOfPeople" | translate}}: {{recipe.numberOfPersons}}</p>
+        <p>{{"ingredients" | translate}}: {{formatIngredients(recipe.ingredients)}}</p>
       </ion-label>
     </ion-item>
   </ion-list>  
@@ -27,7 +27,7 @@
     <ng-template>
       <ion-header>
         <ion-toolbar color="light">
-          <ion-title>Neues Rezept</ion-title>
+          <ion-title>{{"newRecipe" | translate}}</ion-title>
           <ion-buttons slot="end">
             <ion-fab-button (click)="cancel()" color="danger"> <ion-icon name="close-outline"></ion-icon> </ion-fab-button>
           </ion-buttons>
@@ -36,19 +36,23 @@
       <ion-content>
         <ion-list>
           <ion-item>
-            <ion-input [(ngModel)]="recipeName" label="Rezeptname" placeholder="Name des Rezepts"></ion-input>
+            <ion-label position="stacked">{{ "recipeName" | translate }}</ion-label>
+            <ion-input [(ngModel)]="recipeName" placeholder="{{ 'nameOfRecipe' | translate }}"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input [(ngModel)]="numberOfPersons" label="Personenanzahl" placeholder="Für wie viele Personen sind die Angaben?"></ion-input>
+            <ion-label position="stacked">{{ "numberOfPeople" | translate }}</ion-label>
+            <ion-input [(ngModel)]="numberOfPersons" placeholder="{{ 'howManyPeople' | translate }}"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-textarea rows="8" [(ngModel)]="ingredients" label="Zutaten" placeholder="Liste aller Zutaten. Nach jeder Zutat einmal Enter"></ion-textarea>
+            <ion-label position="stacked">{{ "ingredients" | translate }}</ion-label>
+            <ion-textarea rows="5" [(ngModel)]="ingredients" placeholder="{{ 'listOfIngredients' | translate }}"></ion-textarea>
           </ion-item>
           <ion-item>
-            <ion-textarea rows="8" [(ngModel)]="steps" label="Schritte" placeholder="Liste aller Schritte. Nach jedem Schritt einmal Enter"></ion-textarea>
+            <ion-label position="stacked">{{ "steps" | translate }}</ion-label>
+            <ion-textarea rows="5" [(ngModel)]="steps" placeholder="{{ 'listOfSteps' | translate }}"></ion-textarea>
           </ion-item>
         </ion-list>
-      <ion-button expand="full" (click)="addRecipe()">Rezept hinzufügen</ion-button>
+      <ion-button expand="full" (click)="addRecipe()">{{ "addRecipe" | translate }}</ion-button>
       </ion-content>
     </ng-template>
   </ion-modal>
