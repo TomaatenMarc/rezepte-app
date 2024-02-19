@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { FirebaseService } from '../services/firebase.service';
+import { Capacitor } from '@capacitor/core';
+import { Share } from '@capacitor/share';
 
 @Component({
   selector: 'app-recipe',
@@ -39,8 +41,8 @@ export class RecipeComponent  implements OnInit {
 
   async shareRecipe(){
     const ingredients = this.recipe.ingredients.join('\n');
-    const steps = this.recipe.steps.join('\n');
-    const shareData = {
+    const steps = this.recipe.steps.join('\n\n');
+    /*const shareData = {
       title: this.recipe.name,
       text: `Zutaten:\n${ingredients}\n\nSchritte:\n${steps}`,
     };
@@ -49,7 +51,12 @@ export class RecipeComponent  implements OnInit {
       console.log('Shared successfully');
     } catch (error) {
       console.error('Error sharing:', error);
-    }
+    }*/
+
+    await Share.share({
+      text: `Rezept:\n${this.recipe.name}\n\nZutaten:\n${ingredients}\n\nSchritte:\n${steps}`,
+      dialogTitle: 'Teilen'
+    });
   }
 
   copyIngredients(){
