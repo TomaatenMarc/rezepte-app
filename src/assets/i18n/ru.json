@@ -19,5 +19,9 @@
     "settings": "Настройки",
     "language": "Язык",
     "darkMode": "Темный режим",
-    "shareRecipe": "Поделиться рецептом"
+    "shareRecipe": "Поделиться рецептом",
+    "search": "Поиск",
+    "targetWord": "Искомое слово",
+    "searchByIngredient": "Поиск по ингредиенту",
+    "searchByName": "Поиск по названию"
 }

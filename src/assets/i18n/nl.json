@@ -19,5 +19,9 @@
     "settings": "Instellingen",
     "language": "Taal",
     "darkMode": "Donkere modus",
-    "shareRecipe": "Recept delen"
+    "shareRecipe": "Recept delen",
+    "search": "Zoeken",
+    "targetWord": "Zoekwoord",
+    "searchByIngredient": "Zoeken op ingrediënt",
+    "searchByName": "Zoeken op naam"
 }

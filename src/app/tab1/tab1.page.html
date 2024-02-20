@@ -22,6 +22,12 @@
       <ion-icon name="add-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
+  <ion-fab slot="fixed" horizontal="start" vertical="bottom">
+    <ion-fab-button (click)="searchRecipe()">
+      <ion-icon name="search-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   
   <ion-modal [isOpen]="openNewRecipe" (willDismiss)="onWillDismiss($event)">
     <ng-template>
@@ -52,7 +58,48 @@
             <ion-textarea rows="5" [(ngModel)]="steps" placeholder="{{ 'listOfSteps' | translate }}"></ion-textarea>
           </ion-item>
         </ion-list>
-      <ion-button expand="full" (click)="addRecipe()">{{ "addRecipe" | translate }}</ion-button>
+        <ion-button expand="full" (click)="addRecipe()">{{ "addRecipe" | translate }}</ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal [isOpen]="openSearch" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="light">
+          <ion-title>{{"search" | translate}}</ion-title>
+          <ion-buttons slot="end">
+            <ion-fab-button (click)="cancel()" color="danger"> <ion-icon name="close-outline"></ion-icon> </ion-fab-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item>
+            <ion-input [(ngModel)]="searchString" placeholder=" {{ 'targetWord' | translate }} "></ion-input>
+          </ion-item>
+          <ng-container *ngFor="let recipe of recipes">
+            <ion-item *ngIf="recipe.hasString" (click)="openRecipe(recipe)">
+              <ion-label>
+                <h2>{{recipe.name}}</h2>
+                <p>{{"numberOfPeople" | translate}}: {{recipe.numberOfPersons}}</p>
+                <p class="ingredientsCrop">{{"ingredients" | translate}}: {{formatIngredients(recipe.ingredients)}}</p>
+              </ion-label>
+            </ion-item>
+          </ng-container>
+        </ion-list>
+        <ion-row>
+          <ion-col size="6">
+            <ion-text>
+              <ion-button expand="full" (click)="searchByIngredient()">{{ "searchByIngredient" | translate }}</ion-button>
+            </ion-text>
+          </ion-col>
+          <ion-col size="6">
+            <ion-text>
+              <ion-button expand="full" (click)="searchByName()">{{ "searchByName" | translate }}</ion-button>
+            </ion-text>
+          </ion-col>
+        </ion-row>
       </ion-content>
     </ng-template>
   </ion-modal>

@@ -19,5 +19,9 @@
     "settings": "الإعدادات",
     "language": "اللغة",
     "darkMode": "الوضع الداكن",
-    "shareRecipe": "مشاركة الوصفة"
+    "shareRecipe": "مشاركة الوصفة",
+    "search": "بحث",
+    "targetWord": "الكلمة المستهدفة",
+    "searchByIngredient": "البحث بواسطة المكون",
+    "searchByName": "البحث بواسطة الاسم"
 }

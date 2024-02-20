@@ -19,5 +19,9 @@
     "settings": "Instellungen",
     "language": "Spraak",
     "darkMode": "Duustern Modus",
-    "shareRecipe": "Rezept deelen"
+    "shareRecipe": "Rezept deelen",
+    "search": "Söken",
+    "targetWord": "Sökwöört",
+    "searchByIngredient": "Söken na Ingredienz",
+    "searchByName": "Söken na Naam"
 }

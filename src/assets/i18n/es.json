@@ -19,5 +19,9 @@
     "settings": "Configuración",
     "language": "Idioma",
     "darkMode": "Modo oscuro",
-    "shareRecipe": "Compartir receta"
+    "shareRecipe": "Compartir receta",
+    "search": "Buscar",
+    "targetWord": "Palabra clave",
+    "searchByIngredient": "Buscar por ingrediente",
+    "searchByName": "Buscar por nombre"
 }

@@ -19,5 +19,9 @@
     "settings": "Settings",
     "language": "Language",
     "darkMode": "Dark mode",
-    "shareRecipe": "Share recipe"
+    "shareRecipe": "Share recipe",
+    "search": "Search",
+    "targetWord": "Target word",
+    "searchByIngredient": "Search by ingredient",
+    "searchByName": "Search by name"
 }

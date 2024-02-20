@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
 import { NavController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -10,6 +11,7 @@ import { NavController } from '@ionic/angular';
 export class Tab1Page implements OnInit{
 
   openNewRecipe = false;
+  openSearch = false;
 
   recipes: any[] = [];
 
@@ -18,9 +20,12 @@ export class Tab1Page implements OnInit{
   ingredients: string = '';
   steps: string = '';
 
+  searchString: string = '';
+
   constructor(
     private firebaseService: FirebaseService,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private modalCtrl: ModalController
     ) {}
   ngOnInit(){
     this.getRecipes();
@@ -32,19 +37,53 @@ export class Tab1Page implements OnInit{
 
   onWillDismiss(event:any){
     this.openNewRecipe = false;
+    this.openSearch = false;
   }
 
   cancel(){
     this.openNewRecipe = false;
+    this.openSearch = false;
+  }
+
+  searchRecipe(){
+    this.openSearch = true;
+  }
+
+  searchByIngredient(){
+    this.recipes.forEach((recipe) => {
+      recipe.hasString = false;
+      recipe.ingredients.forEach((ingredient: string) => {
+        if(ingredient.toLowerCase().includes(this.searchString.toLowerCase())){
+          recipe.hasString = true;
+        }
+      });
+    });
+  }
+
+  searchByName(){
+    this.recipes.forEach((recipe) => {
+      recipe.hasString = false;
+      if(recipe.name.toLowerCase().includes(this.searchString.toLowerCase())){
+        recipe.hasString = true;
+      }
+    });
   }
 
   getRecipes(){
     this.firebaseService.getRecipes().subscribe((recipes: any[]) => {
       this.recipes = recipes;
     });
+    this.recipes.forEach((recipe) => {
+      recipe.hasString = false;
+    });
   }
 
   openRecipe(recipe: any){
+    this.modalCtrl.dismiss();
+    this.searchString = '';
+    this.recipes.forEach((recipe) => {
+      recipe.hasString = false;
+    });
     this.navCtrl.navigateForward(['/recipe'], {state: {recipe: recipe}});
   }
 
