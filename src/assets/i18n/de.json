@@ -25,5 +25,7 @@
     "searchByIngredient": "Suche nach Zutat",
     "searchByName": "Suche nach Namen",
     "database": "Datenbank",
-    "save": "Speichern"
+    "save": "Speichern",
+    "withoutCategory": "Ohne Kategorie",
+    "category": "Kategorie"
 }

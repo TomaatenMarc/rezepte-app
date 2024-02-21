@@ -20,6 +20,7 @@ import { Tab1Page } from './tab1/tab1.page';
 import { Tab2Page } from './tab2/tab2.page';
 import { Tab3Page } from './tab3/tab3.page';
 import { TabsPage } from './tabs/tabs.page';
+import { CategoryComponent } from './category/category.component';
 
 //https://www.youtube.com/watch?v=NVFVbah2aWU
 export function HttpLoaderFactory(http:HttpClient){
@@ -33,6 +34,7 @@ export function HttpLoaderFactory(http:HttpClient){
     AppComponent,
     RecipeComponent,
     StepComponent,
+    CategoryComponent,
     Tab1Page,
     Tab2Page,
     Tab3Page,

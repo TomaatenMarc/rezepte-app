@@ -25,5 +25,7 @@
     "searchByIngredient": "Search by ingredient",
     "searchByName": "Search by name",
     "database": "Database",
-    "save": "Save"
+    "save": "Save",
+    "withoutCategory": "Without category",
+    "category": "Category"
 }

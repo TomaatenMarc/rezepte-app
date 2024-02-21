@@ -14,11 +14,13 @@ export class Tab1Page implements OnInit{
   openSearch = false;
 
   recipes: any[] = [];
+  categories: any[] = [];
 
   recipeName: string = '';
   numberOfPersons: number = 1;
   ingredients: string = '';
   steps: string = '';
+  category: string = '';
 
   searchString: string = '';
 
@@ -29,6 +31,23 @@ export class Tab1Page implements OnInit{
     ) {}
   ngOnInit(){
     this.getRecipes();
+    this.getCategories();
+  }
+
+  getRecipeCount(category: string): number {
+    if (this.recipes.length === 0) return 0;
+    return this.recipes.filter(recipe => recipe.category.toLowerCase() === category.toLowerCase()).length;
+  }
+
+  async getCategories(){
+    (await this.firebaseService.fillCategories()).subscribe((categories: any[]) => {
+      this.categories = categories;
+      this.categories.sort((a, b) => a.localeCompare(b));
+    });
+  }
+
+  openCategory(category: string){
+    this.navCtrl.navigateForward(['/category'], {state: {category: category}});
   }
 
   newRecipe(){
@@ -90,6 +109,7 @@ export class Tab1Page implements OnInit{
   addRecipe(){
     const recipeData = {
       name: this.recipeName,
+      category: this.category,
       numberOfPersons: this.numberOfPersons,
       ingredients: this.ingredients.split('\n'),
       steps: this.steps.split('\n'),
@@ -105,9 +125,11 @@ export class Tab1Page implements OnInit{
     });
     this.openNewRecipe = false;
     this.recipeName = '';
+    this.category = '';
     this.numberOfPersons = 1;
     this.ingredients = '';
     this.steps = '';
+    this.getCategories();
   }
 
   formatIngredients(ingredients: string[]){

@@ -25,5 +25,7 @@
     "searchByIngredient": "Söken na Ingredienz",
     "searchByName": "Söken na Naam",
     "database": "Datenbank",
-    "save": "Sichern"
+    "save": "Sichern",
+    "withoutCategory": "Ohne Kategorie",
+    "category": "Kategorie"
 }

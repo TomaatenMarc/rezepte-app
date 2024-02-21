@@ -25,5 +25,7 @@
     "searchByIngredient": "Zoeken op ingrediënt",
     "searchByName": "Zoeken op naam",
     "database": "Database",
-    "save": "Opslaan"
+    "save": "Opslaan",
+    "withoutCategory": "Zonder categorie",
+    "category": "Categorie"
 }

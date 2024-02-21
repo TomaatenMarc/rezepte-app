@@ -25,5 +25,7 @@
     "searchByIngredient": "Поиск по ингредиенту",
     "searchByName": "Поиск по названию",
     "database": "База данных",
-    "save": "Сохранить"
+    "save": "Сохранить",
+    "withoutCategory": "Без категории",
+    "category": "Категория"
 }

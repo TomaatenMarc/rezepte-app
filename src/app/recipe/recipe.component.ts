@@ -16,6 +16,7 @@ export class RecipeComponent  implements OnInit {
   deleteModal: boolean = false;
 
   recipeName: string = '';
+  category: string = '';
   numberOfPersons: number = 1;
   ingredients: string = '';
   steps: string = '';
@@ -29,6 +30,7 @@ export class RecipeComponent  implements OnInit {
   ngOnInit() {
     this.recipe = history.state.recipe;
     this.recipeName = this.recipe.name;
+    this.category = this.recipe.category;
     this.numberOfPersons = this.recipe.numberOfPersons;
     this.ingredients = this.recipe.ingredients.join('\n');
     this.steps = this.recipe.steps.join('\n');
@@ -42,16 +44,6 @@ export class RecipeComponent  implements OnInit {
   async shareRecipe(){
     const ingredients = this.recipe.ingredients.join('\n');
     const steps = this.recipe.steps.join('\n\n');
-    /*const shareData = {
-      title: this.recipe.name,
-      text: `Zutaten:\n${ingredients}\n\nSchritte:\n${steps}`,
-    };
-    try {
-      await (navigator as any).share(shareData);
-      console.log('Shared successfully');
-    } catch (error) {
-      console.error('Error sharing:', error);
-    }*/
 
     await Share.share({
       text: `Rezept:\n${this.recipe.name}\n\nZutaten:\n${ingredients}\n\nSchritte:\n${steps}`,
@@ -74,6 +66,7 @@ export class RecipeComponent  implements OnInit {
     console.log('Recipe ID:', this.recipe.name);
     const editedRecipe = {
       name: this.recipeName,
+      category: this.category,
       numberOfPersons: this.numberOfPersons,
       ingredients: this.ingredients.split('\n'),
       steps: this.steps.split('\n'),

@@ -93,6 +93,10 @@
             <ion-input [(ngModel)]="recipeName"></ion-input>
           </ion-item>
           <ion-item>
+            <ion-label position="stacked">{{ "category" | translate }}</ion-label>
+            <ion-input [(ngModel)]="category" placeholder="{{ 'category' | translate }}"></ion-input>
+          </ion-item>
+          <ion-item>
             <ion-label position="stacked">{{ "numberOfPeople" | translate }}</ion-label>
             <ion-input [(ngModel)]="numberOfPersons" label=""></ion-input>
           </ion-item>

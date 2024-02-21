@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title *ngIf="category!==''">{{ category }}</ion-title>
+    <ion-title *ngIf="category===''">{{"withoutCategory" | translate}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-fab-button (click)="return()" color="danger"> <ion-icon name="close-outline"></ion-icon> </ion-fab-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ng-container *ngFor="let recipe of recipes" >
+      <ion-item *ngIf="recipe.category.toLowerCase() === category.toLowerCase()" (click)="openRecipe(recipe)">
+        <ion-label>
+          <h2>{{recipe.name}}</h2>
+          <p>{{"numberOfPeople" | translate}}: {{recipe.numberOfPersons}}</p>
+          <p class="ingredientsCrop">{{"ingredients" | translate}}: {{formatIngredients(recipe.ingredients)}}</p>
+        </ion-label>
+      </ion-item>
+    </ng-container>
+  </ion-list>  
+</ion-content>

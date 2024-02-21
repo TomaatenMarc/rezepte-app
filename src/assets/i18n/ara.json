@@ -25,5 +25,7 @@
     "searchByIngredient": "البحث بواسطة المكون",
     "searchByName": "البحث بواسطة الاسم",
     "database": "قاعدة البيانات",
-    "save": "حفظ"
+    "save": "حفظ",
+    "withoutCategory": "بدون تصنيف",
+    "category": "تصنيف"
 }

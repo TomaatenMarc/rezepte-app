@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { RecipeComponent } from './recipe/recipe.component';
 import { StepComponent } from './recipe/step/step.component';
+import { CategoryComponent } from './category/category.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'recipe/step',
     component: StepComponent
+  },
+  {
+    path: 'category',
+    component: CategoryComponent
   }
 ];
 @NgModule({
