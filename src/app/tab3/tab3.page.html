@@ -30,4 +30,12 @@
       <ion-button (click)="saveCollectionName()">{{ "save" | translate }}</ion-button>
     </ion-item>
   </ion-list>
+
+  <ion-toast
+    [isOpen]="savedDatabaseToast"
+    message="{{ 'savedNewDatabase' | translate }}"
+    [duration]="3000"
+    (didDismiss)="setOpenSavedDatabase(false)"
+    (click)="setOpenSavedDatabase(false)"
+  ></ion-toast>
 </ion-content>

@@ -5,3 +5,22 @@
 ion-fab ion-fab-button{
     --background: rgba(255, 73, 97, 0.5);
 }
+
+ion-avatar{
+    height: 128px;
+    width: 128px;
+}
+
+.preview {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    max-height: 280px;
+}
+
+.preview img {
+    max-height: 100%;
+    width: auto;
+    object-fit: cover;
+    object-position: center;
+}

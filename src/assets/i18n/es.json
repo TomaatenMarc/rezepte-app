@@ -27,5 +27,14 @@
     "database": "Base de datos",
     "save": "Guardar",
     "withoutCategory": "Sin categoría",
-    "category": "Categoría"
+    "category": "Categoría",
+    "shareRecipeToDifferentDatabase": "Compartir receta a una base de datos diferente",
+    "nameOfDatabaseRecipeShouldBeCopiedTo": "Nombre de la receta en la base de datos a la que se copiará",
+    "addRecipeToDatabase": "Agregar receta a la base de datos",
+    "copiedToClipboard": "Copiado al portapapeles",
+    "copiedToDatabase": "Copiado a la base de datos",
+    "errorCopyingToDatabase": "Error copiando a la base de datos",
+    "savedNewDatabase": "Guardada nueva base de datos",
+    "addedRecipe": "Receta agregada",
+    "errorAddingRecipe": "Error agregando receta"
 }

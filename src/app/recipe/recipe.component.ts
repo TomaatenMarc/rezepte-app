@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { FirebaseService } from '../services/firebase.service';
-import { Capacitor } from '@capacitor/core';
 import { Share } from '@capacitor/share';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { AlertController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-recipe',
@@ -14,17 +15,26 @@ export class RecipeComponent  implements OnInit {
   recipe: any;
   editModal: boolean = false;
   deleteModal: boolean = false;
+  shareDatabaseModal: boolean = false;
+  databaseName: string = '';
+
+  copiedToast: boolean = false;
+  databaseToast: boolean = false;
+  notDatabaseToast: boolean = false;
 
   recipeName: string = '';
   category: string = '';
   numberOfPersons: number = 1;
   ingredients: string = '';
   steps: string = '';
+  image: string = '';
 
   constructor(
     private route: ActivatedRoute,
     private navCtrl: NavController,
-    private firebaseService: FirebaseService
+    private firebaseService: FirebaseService,
+    private alertController: AlertController,
+    private loadingController: LoadingController
     ) { }
 
   ngOnInit() {
@@ -34,11 +44,51 @@ export class RecipeComponent  implements OnInit {
     this.numberOfPersons = this.recipe.numberOfPersons;
     this.ingredients = this.recipe.ingredients.join('\n');
     this.steps = this.recipe.steps.join('\n');
+    this.image = this.recipe.image;
   }
 
   onWillDismiss(event:any){
     this.editModal = false;
     this.deleteModal = false;
+    this.shareDatabaseModal = false;
+  }
+
+  setOpenCopy(isOpen: boolean) {
+    this.copiedToast = isOpen;
+  }
+  setOpenDatabase(isOpen: boolean) {
+    this.databaseToast = isOpen;
+  }
+  setOpenNotDatabase(isOpen: boolean) {
+    this.notDatabaseToast = isOpen;
+  }
+
+  async changeImage(){
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Base64,
+      source: CameraSource.Photos
+    });
+
+    this.recipe.image = image;
+
+    if (image){
+      const loading = await this.loadingController.create();
+      await loading.present();
+
+      const result = await this.firebaseService.uploadImage(this.recipe, image);
+      loading.dismiss();
+
+      if(!result){
+        const alert = await this.alertController.create({
+          header: 'Upload failed',
+          message: 'There was a problem uploading your image.',
+          buttons: ['OK'],
+        });
+        await alert.present();
+      }
+    }
   }
 
   async shareRecipe(){
@@ -51,10 +101,28 @@ export class RecipeComponent  implements OnInit {
     });
   }
 
+  shareRecipeToDatabase() {
+    if (this.databaseName !== '') {
+      this.firebaseService.addRecipeToDatabase(this.recipe, this.databaseName).then(() => {
+        this.setOpenDatabase(true);
+      })
+      .catch((error) => {
+        this.setOpenNotDatabase(true);
+      });
+    }
+    this.shareDatabaseModal = false;
+    this.databaseName = '';
+    this.databaseToast = true;
+  }
+
+  openShareDatabaseModal(){
+    this.shareDatabaseModal = true;
+  }
+
   copyIngredients(){
     const ingredients = this.recipe.ingredients.join('\n');
     navigator.clipboard.writeText(ingredients);
-    console.log('Ingredients copied to clipboard');
+    this.setOpenCopy(true);
   }
 
   openModal(){
@@ -103,6 +171,7 @@ export class RecipeComponent  implements OnInit {
   cancel(){
     this.editModal = false;
     this.deleteModal = false;
+    this.shareDatabaseModal = false;
   }
   
   return(){

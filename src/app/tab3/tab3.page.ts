@@ -11,7 +11,13 @@ export class Tab3Page {
   selectedLanguage: string = this.settings.selectedLanguage;
   collectionName: string = this.settings.collectionName;
 
+  savedDatabaseToast: boolean = false;
+
   constructor(private settings: SettingsService) {}
+
+  setOpenSavedDatabase(isOpen: boolean) {
+    this.savedDatabaseToast = isOpen;
+  }
 
   toggleDarkMode(event: any) {
     this.settings.toggleDarkMode(event);
@@ -24,5 +30,6 @@ export class Tab3Page {
   saveCollectionName() {
     this.settings.setCollectionName(this.collectionName);
     window.location.reload();
+    this.setOpenSavedDatabase(true);
   }
 }

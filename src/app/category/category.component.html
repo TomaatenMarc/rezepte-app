@@ -10,8 +10,24 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ng-container *ngFor="let recipe of recipes" >
-      <ion-item *ngIf="recipe.category.toLowerCase() === category.toLowerCase()" (click)="openRecipe(recipe)">
+    <ng-container *ngFor="let recipe of recipes">
+      <ion-row *ngIf="recipe.category.toLowerCase() === category.toLowerCase() && recipe.image" (click)="openRecipe(recipe)">
+        <ion-col size="9">
+          <ion-item>
+            <ion-label>
+              <h2>{{recipe.name}}</h2>
+              <p>{{"numberOfPeople" | translate}}: {{recipe.numberOfPersons}}</p>
+              <p class="ingredientsCrop">{{"ingredients" | translate}}: {{formatIngredients(recipe.ingredients)}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="3">
+          <ion-avatar>
+            <img [src]="recipe.image"/>
+          </ion-avatar>
+        </ion-col>
+      </ion-row>
+      <ion-item *ngIf="recipe.category.toLowerCase() === category.toLowerCase() && !recipe.image" (click)="openRecipe(recipe)">
         <ion-label>
           <h2>{{recipe.name}}</h2>
           <p>{{"numberOfPeople" | translate}}: {{recipe.numberOfPersons}}</p>

@@ -27,5 +27,14 @@
     "database": "قاعدة البيانات",
     "save": "حفظ",
     "withoutCategory": "بدون تصنيف",
-    "category": "تصنيف"
+    "category": "تصنيف",
+    "shareRecipeToDifferentDatabase": "مشاركة الوصفة إلى قاعدة بيانات مختلفة",
+    "nameOfDatabaseRecipeShouldBeCopiedTo": "اسم قاعدة البيانات التي يجب نسخ الوصفة إليها",
+    "addRecipeToDatabase": "إضافة وصفة إلى قاعدة البيانات",
+    "copiedToClipboard": "تم النسخ إلى الحافظة",
+    "copiedToDatabase": "تم النسخ إلى قاعدة البيانات",
+    "errorCopyingToDatabase": "خطأ في النسخ إلى قاعدة البيانات",
+    "savedNewDatabase": "تم حفظ قاعدة بيانات جديدة",
+    "addedRecipe": "تمت إضافة الوصفة",
+    "errorAddingRecipe": "خطأ في إضافة الوصفة"
 }

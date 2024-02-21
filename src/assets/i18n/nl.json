@@ -27,5 +27,14 @@
     "database": "Database",
     "save": "Opslaan",
     "withoutCategory": "Zonder categorie",
-    "category": "Categorie"
+    "category": "Categorie",
+    "shareRecipeToDifferentDatabase": "Recept delen naar een andere database",
+    "nameOfDatabaseRecipeShouldBeCopiedTo": "Naam van de database waar het recept naar toe moet worden gekopieerd",
+    "addRecipeToDatabase": "Recept toevoegen aan database",
+    "copiedToClipboard": "Gekopieerd naar klembord",
+    "copiedToDatabase": "Gekopieerd naar database",
+    "errorCopyingToDatabase": "Fout bij kopiëren naar database",
+    "savedNewDatabase": "Nieuwe database opgeslagen",
+    "addedRecipe": "Recept toegevoegd",
+    "errorAddingRecipe": "Fout bij toevoegen van recept"
 }

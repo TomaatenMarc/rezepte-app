@@ -27,5 +27,14 @@
     "database": "Datenbank",
     "save": "Sichern",
     "withoutCategory": "Ohne Kategorie",
-    "category": "Kategorie"
+    "category": "Kategorie",
+    "shareRecipeToDifferentDatabase": "Rezept in annere Datenbank deelen",
+    "nameOfDatabaseRecipeShouldBeCopiedTo": "Naam vun de Datenbank, in de dat Rezept kopiert warrn schall",
+    "addRecipeToDatabase": "Rezept tofögen",
+    "copiedToClipboard": "Kopiert na Tüschenablage",
+    "copiedToDatabase": "Kopiert na Datenbank",
+    "errorCopyingToDatabase": "Fehler bi't Kopieren na Datenbank",
+    "savedNewDatabase": "Nieg Datenbank sichert",
+    "addedRecipe": "Rezept tofögt",
+    "errorAddingRecipe": "Fehler bi't Tofögen vun dat Rezept"
 }

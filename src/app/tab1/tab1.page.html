@@ -98,16 +98,31 @@
         <ion-row>
           <ion-col size="6">
             <ion-text>
-              <ion-button expand="full" (click)="searchByIngredient()">{{ "searchByIngredient" | translate }}</ion-button>
+              <ion-button id="searchByIngredient" expand="full" (click)="searchByIngredient()">{{ "searchByIngredient" | translate }}</ion-button>
             </ion-text>
           </ion-col>
           <ion-col size="6">
             <ion-text>
-              <ion-button expand="full" (click)="searchByName()">{{ "searchByName" | translate }}</ion-button>
+              <ion-button id="searchByName" expand="full" (click)="searchByName()">{{ "searchByName" | translate }}</ion-button>
             </ion-text>
           </ion-col>
         </ion-row>
       </ion-content>
     </ng-template>
   </ion-modal>
+
+  <ion-toast
+    [isOpen]="addedToast"
+    message="{{ 'addedRecipe' | translate }}"
+    [duration]="3000"
+    (didDismiss)="setOpenAdded(false)"
+    (click)="setOpenAdded(false)"
+  ></ion-toast>
+  <ion-toast
+    [isOpen]="notAddedToast"
+    message="{{ 'errorAddingRecipe' | translate }}"
+    [duration]="3000"
+    (didDismiss)="setOpenNotAdded(false)"
+    (click)="setOpenNotAdded(false)"
+  ></ion-toast>
 </ion-content>

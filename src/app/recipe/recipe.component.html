@@ -8,6 +8,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class="preview">
+    <img *ngIf="recipe.image; else placeholder_image" [src]="recipe.image" (click)="changeImage()"/>
+    <ng-template #placeholder_image>
+      <img src="https://cdn.dribbble.com/users/1012566/screenshots/4187820/media/985748436085f06bb2bd63686ff491a5.jpg" (click)="changeImage()"/>
+    </ng-template>
+  </div>
+
   <ion-list>  
     <ion-item>
       <ion-label>
@@ -114,5 +121,54 @@
     </ng-template>
   </ion-modal>
 
-  <ion-button expand="full" (click)="shareRecipe()">{{"shareRecipe" | translate}}</ion-button>
+  <ion-modal [isOpen]="shareDatabaseModal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="light">
+          <ion-title>{{"shareRecipeToDifferentDatabase" | translate}}</ion-title>
+          <ion-buttons slot="end">
+            <ion-fab-button (click)="cancel()" color="danger"> <ion-icon name="close-outline"></ion-icon> </ion-fab-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">{{ "database" | translate }}</ion-label>
+            <ion-input [(ngModel)]="databaseName" placeholder="{{ 'nameOfDatabaseRecipeShouldBeCopiedTo' | translate }}"></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="full" (click)="shareRecipeToDatabase()">{{"shareRecipe" | translate}}</ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-text>
+    <ion-button expand="full" (click)="shareRecipe()">{{"shareRecipe" | translate}}</ion-button>
+  </ion-text>
+  <ion-text>
+    <ion-button expand="full" (click)="openShareDatabaseModal()">{{"addRecipeToDatabase" | translate}}</ion-button>
+  </ion-text>
+
+  <ion-toast
+    [isOpen]="copiedToast"
+    message="{{ 'copiedToClipboard' | translate }}"
+    [duration]="3000"
+    (didDismiss)="setOpenCopy(false)"
+    (click)="setOpenCopy(false)"
+  ></ion-toast>
+  <ion-toast
+    [isOpen]="databaseToast"
+    message="{{ 'copiedToDatabase' | translate }}"
+    [duration]="3000"
+    (didDismiss)="setOpenDatabase(false)"
+    (click)="setOpenDatabase(false)"
+  ></ion-toast>
+  <ion-toast
+    [isOpen]="notDatabaseToast"
+    message="{{ 'errorCopyingToDatabase' | translate }}"
+    [duration]="3000"
+    (didDismiss)="setOpenNotDatabase(false)"
+    (click)="setOpenNotDatabase(false)"
+  ></ion-toast>
 </ion-content>

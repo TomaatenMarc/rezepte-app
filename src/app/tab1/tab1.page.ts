@@ -22,6 +22,9 @@ export class Tab1Page implements OnInit{
   steps: string = '';
   category: string = '';
 
+  addedToast: boolean = false;
+  notAddedToast: boolean = false;
+
   searchString: string = '';
 
   constructor(
@@ -32,6 +35,14 @@ export class Tab1Page implements OnInit{
   ngOnInit(){
     this.getRecipes();
     this.getCategories();
+  }
+
+  setOpenAdded(isOpen: boolean) {
+    this.addedToast = isOpen;
+  }
+
+  setOpenNotAdded(isOpen: boolean) {
+    this.notAddedToast = isOpen;
   }
 
   getRecipeCount(category: string): number {
@@ -62,6 +73,10 @@ export class Tab1Page implements OnInit{
   cancel(){
     this.openNewRecipe = false;
     this.openSearch = false;
+    const elementIng = document.getElementById('searchByIngredient');
+    elementIng?.classList.remove('buttonActivated');
+    const elementName = document.getElementById('searchByName');
+    elementName?.classList.remove('buttonActivated');
   }
 
   searchRecipe(){
@@ -69,6 +84,10 @@ export class Tab1Page implements OnInit{
   }
 
   searchByIngredient(){
+    const elementName = document.getElementById('searchByName');
+    elementName?.classList.remove('buttonActivated');
+    const element = document.getElementById('searchByIngredient');
+    element?.classList.add('buttonActivated');
     this.recipes.forEach((recipe) => {
       recipe.hasString = false;
       recipe.ingredients.forEach((ingredient: string) => {
@@ -80,6 +99,10 @@ export class Tab1Page implements OnInit{
   }
 
   searchByName(){
+    const elementIng = document.getElementById('searchByIngredient');
+    elementIng?.classList.remove('buttonActivated');
+    const element = document.getElementById('searchByName');
+    element?.classList.add('buttonActivated');
     this.recipes.forEach((recipe) => {
       recipe.hasString = false;
       if(recipe.name.toLowerCase().includes(this.searchString.toLowerCase())){
@@ -98,6 +121,10 @@ export class Tab1Page implements OnInit{
   }
 
   openRecipe(recipe: any){
+    const elementIng = document.getElementById('searchByIngredient');
+    elementIng?.classList.remove('buttonActivated');
+    const elementName = document.getElementById('searchByName');
+    elementName?.classList.remove('buttonActivated');
     this.modalCtrl.dismiss();
     this.searchString = '';
     this.recipes.forEach((recipe) => {
@@ -118,10 +145,10 @@ export class Tab1Page implements OnInit{
 
     this.firebaseService.addRecipe(recipeData)
     .then(() => {
-      console.log('Rezept hinzugefügt');
+      this.setOpenAdded(true);
     })
     .catch((error) => {
-      console.error('Fehler beim Hinzufügen des Rezeptes: ', error);
+      this.setOpenNotAdded(true);
     });
     this.openNewRecipe = false;
     this.recipeName = '';

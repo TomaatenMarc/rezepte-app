@@ -27,5 +27,14 @@
     "database": "База данных",
     "save": "Сохранить",
     "withoutCategory": "Без категории",
-    "category": "Категория"
+    "category": "Категория",
+    "shareRecipeToDifferentDatabase": "Поделиться рецептом с другой базой данных",
+    "nameOfDatabaseRecipeShouldBeCopiedTo": "Название базы данных, в которую нужно скопировать рецепт",
+    "addRecipeToDatabase": "Добавить рецепт в базу данных",
+    "copiedToClipboard": "Скопировано в буфер обмена",
+    "copiedToDatabase": "Скопировано в базу данных",
+    "errorCopyingToDatabase": "Ошибка копирования в базу данных",
+    "savedNewDatabase": "Сохранена новая база данных",
+    "addedRecipe": "Рецепт добавлен",
+    "errorAddingRecipe": "Ошибка добавления рецепта"
 }

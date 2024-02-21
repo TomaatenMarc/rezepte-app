@@ -27,5 +27,14 @@
     "database": "Database",
     "save": "Save",
     "withoutCategory": "Without category",
-    "category": "Category"
+    "category": "Category",
+    "shareRecipeToDifferentDatabase": "Share recipe to a different database",
+    "nameOfDatabaseRecipeShouldBeCopiedTo": "Name of the database the recipe should be copied to",
+    "addRecipeToDatabase": "Add recipe to different database",
+    "copiedToClipboard": "Copied to clipboard",
+    "copiedToDatabase": "Copied to database",
+    "errorCopyingToDatabase": "Error copying to database",
+    "savedNewDatabase": "Saved new database",
+    "addedRecipe": "Added recipe",
+    "errorAddingRecipe": "Error adding recipe"
 }

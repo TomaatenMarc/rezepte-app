@@ -27,5 +27,14 @@
     "database": "Datenbank",
     "save": "Speichern",
     "withoutCategory": "Ohne Kategorie",
-    "category": "Kategorie"
+    "category": "Kategorie",
+    "shareRecipeToDifferentDatabase": "Rezept in eine andere Datenbank kopieren",
+    "nameOfDatabaseRecipeShouldBeCopiedTo": "Name der Datenbank, in die das Rezept kopiert werden soll",
+    "addRecipeToDatabase": "Rezept zur Datenbank hinzufügen",
+    "copiedToClipboard": "In die Zwischenablage kopiert",
+    "copiedToDatabase": "In andere Datenbank kopiert",
+    "errorCopyingToDatabase": "Fehler beim Kopieren in die Datenbank",
+    "savedNewDatabase": "Neue Datenbank gespeichert",
+    "addedRecipe": "Rezept hinzugefügt",
+    "errorAddingRecipe": "Fehler beim Hinzufügen des Rezepts"
 }
