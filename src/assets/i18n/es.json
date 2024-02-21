@@ -23,5 +23,7 @@
     "search": "Buscar",
     "targetWord": "Palabra clave",
     "searchByIngredient": "Buscar por ingrediente",
-    "searchByName": "Buscar por nombre"
+    "searchByName": "Buscar por nombre",
+    "database": "Base de datos",
+    "save": "Guardar"
 }

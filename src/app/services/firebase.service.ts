@@ -5,24 +5,29 @@ import { Firestore, collection, query, orderBy, collectionData, doc, setDoc, del
   providedIn: 'root'
 })
 export class FirebaseService {
+  collectionName = '';
   
   constructor(private firestore: Firestore) { }
 
   async addRecipe(recipe: any) {
-    const recipeCollection = collection(this.firestore, 'recipes');
+    const recipeCollection = collection(this.firestore, this.collectionName);
     const recipeDoc = doc(recipeCollection, recipe.id);
     await setDoc(recipeDoc, recipe);
   }
 
   getRecipes() {
-    const recipeCollection = collection(this.firestore, 'recipes');
+    const recipeCollection = collection(this.firestore, this.collectionName);
     const recipesSorted = query(recipeCollection, orderBy('name'));
     return collectionData(recipesSorted);
   }
 
   deleteRecipe(recipe: any) {
-    const recipeCollection = collection(this.firestore, 'recipes');
+    const recipeCollection = collection(this.firestore, this.collectionName);
     const recipeDoc = doc(recipeCollection, recipe.id);
     return deleteDoc(recipeDoc);
+  }
+
+  setCollectionName(collectionName: string) {
+    this.collectionName = collectionName;
   }
 }

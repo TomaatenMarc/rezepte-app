@@ -23,5 +23,7 @@
     "search": "Zoeken",
     "targetWord": "Zoekwoord",
     "searchByIngredient": "Zoeken op ingrediënt",
-    "searchByName": "Zoeken op naam"
+    "searchByName": "Zoeken op naam",
+    "database": "Database",
+    "save": "Opslaan"
 }

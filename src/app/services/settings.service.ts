@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { FirebaseService } from './firebase.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +9,12 @@ import { TranslateService } from '@ngx-translate/core';
 export class SettingsService {
   public darkModeEnabled = true;
   public selectedLanguage: string = 'en';
+  public collectionName: string = 'recipesTest';
 
-  constructor(private translate: TranslateService) {}
+  constructor(
+    private translate: TranslateService,
+    private firebaseService: FirebaseService
+    ) {}
 
   initialize(){
     const darkModeSetting = localStorage.getItem('darkMode');
@@ -27,6 +33,20 @@ export class SettingsService {
       localStorage.setItem('language', JSON.stringify(this.selectedLanguage));
     }
     this.translate.setDefaultLang(this.selectedLanguage);
+
+    const collectionNameSetting = localStorage.getItem('collectionName');
+    if (collectionNameSetting) {
+      this.collectionName = JSON.parse(collectionNameSetting);
+    } else {
+      localStorage.setItem('collectionName', JSON.stringify(this.collectionName));
+    }
+    this.firebaseService.setCollectionName(this.collectionName);
+  }
+
+  setCollectionName(collectionName: string) {
+    this.collectionName = collectionName;
+    this.firebaseService.setCollectionName(collectionName);
+    localStorage.setItem('collectionName', JSON.stringify(this.collectionName));
   }
 
   switchLanguage(language: string) {

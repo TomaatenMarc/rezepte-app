@@ -9,6 +9,7 @@ import { SettingsService } from '../services/settings.service';
 export class Tab3Page {
   darkModeEnabled = this.settings.darkModeEnabled;
   selectedLanguage: string = this.settings.selectedLanguage;
+  collectionName: string = this.settings.collectionName;
 
   constructor(private settings: SettingsService) {}
 
@@ -18,5 +19,10 @@ export class Tab3Page {
 
   changeLanguage() {
     this.settings.switchLanguage(this.selectedLanguage);
+  }
+
+  saveCollectionName() {
+    this.settings.setCollectionName(this.collectionName);
+    window.location.reload();
   }
 }

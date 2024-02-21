@@ -23,5 +23,7 @@
     "search": "Поиск",
     "targetWord": "Искомое слово",
     "searchByIngredient": "Поиск по ингредиенту",
-    "searchByName": "Поиск по названию"
+    "searchByName": "Поиск по названию",
+    "database": "База данных",
+    "save": "Сохранить"
 }

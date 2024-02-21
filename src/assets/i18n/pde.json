@@ -23,5 +23,7 @@
     "search": "Söken",
     "targetWord": "Sökwöört",
     "searchByIngredient": "Söken na Ingredienz",
-    "searchByName": "Söken na Naam"
+    "searchByName": "Söken na Naam",
+    "database": "Datenbank",
+    "save": "Sichern"
 }

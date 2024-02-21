@@ -12,8 +12,6 @@
       <ion-label>{{ "darkMode" | translate }}</ion-label>
       <ion-toggle slot="end" [checked]="darkModeEnabled" (ionChange)="toggleDarkMode($event)"></ion-toggle>
     </ion-item>
-  </ion-list>
-  <ion-list>
     <ion-item>
       <ion-label>{{ "language" | translate }}</ion-label>
       <ion-select [(ngModel)]="selectedLanguage" (ionChange)="changeLanguage()">
@@ -25,6 +23,11 @@
         <ion-select-option value="ara">عربي</ion-select-option>
         <ion-select-option value="ru">Русский</ion-select-option>
       </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ "database" | translate }}</ion-label>
+      <ion-input [(ngModel)]="collectionName" placeholder=" {{ 'database' | translate }} " class="ion-text-center"></ion-input>
+      <ion-button (click)="saveCollectionName()">{{ "save" | translate }}</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

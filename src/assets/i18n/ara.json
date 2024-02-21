@@ -23,5 +23,7 @@
     "search": "بحث",
     "targetWord": "الكلمة المستهدفة",
     "searchByIngredient": "البحث بواسطة المكون",
-    "searchByName": "البحث بواسطة الاسم"
+    "searchByName": "البحث بواسطة الاسم",
+    "database": "قاعدة البيانات",
+    "save": "حفظ"
 }

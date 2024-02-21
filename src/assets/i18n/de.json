@@ -23,5 +23,7 @@
     "search": "Suche",
     "targetWord": "Suchbegriff",
     "searchByIngredient": "Suche nach Zutat",
-    "searchByName": "Suche nach Namen"
+    "searchByName": "Suche nach Namen",
+    "database": "Datenbank",
+    "save": "Speichern"
 }
